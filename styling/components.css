@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* global DRY styling  */
+.header,
+.nav,
+.main-nav div {
+  display: flex;
+  align-items: center;
+}
+
+.header,
+.main,
+.footer,
+.left-side {
+  width: 100%;
+}
+
+/* header styling  */
+.header {
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+/* main styling  */
+.left-side {
+  position: fixed;
+  top: 45px;
+  left: 0;
+  bottom: 60px;
+  max-width: 150px;
+}
+.main-nav div {
+    padding: 20px 0 20px 50px;
+    gap: 10px;
+}
+
+/* footer styling  */
+footer {
+  position: fixed;
+  bottom: 0;
+}
+.footer h3 {
+  text-align: center;
+}
+
+.nav {
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer div p {
+  text-align: center;
+  padding: 5px 0;
+}
