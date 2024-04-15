@@ -1,7 +1,9 @@
 <header class="header">
-    <h3>Logo.</h3>
+    <div>
+        <i class="fa-brands fa-x-twitter logo"></i>
+    </div>
     <div class="auth">
-        <button>Sign In</button>
-        <button>Sign Up</button>
+        <a href=""><button class="a-btn login">Login</button></a>
+        <a href=""><button class="a-btn signup">Sign Up</button></a>
     </div>
 </header>

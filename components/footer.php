@@ -1,5 +1,5 @@
 <footer class="footer">
-    <h3>Logo</h3>
+    <i class="fa-brands fa-x-twitter logo f-logo"></i>
     <nav class="nav">
         <a href="" class="navlink">
             <p>Home</p>
@@ -11,6 +11,6 @@
     </nav>
     <hr>
     <div>
-        <p>Built with &hearts; by <a href="">Onyedikachi</a>. &copy; 2024. All Rights Reserved</p>
+        <p>Built with &hearts; by <a href="https://st-pardon.netlify.app">Onyedikachi</a>. &copy; 2024. All Rights Reserved</p>
     </div>
 </footer>
