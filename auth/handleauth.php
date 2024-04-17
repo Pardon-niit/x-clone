@@ -35,8 +35,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         if (mysqli_stmt_execute($sqli)){
             echo "<div><h2>Account created Successfully!</h2></div>";
+            header("refresh:2; url=/x-clone/auth/login.php");
         }
     }
 }
-
+if (isset($_POST['signup'])){
+    signup($conn);
+}
+if (isset($_POST['login'])){
+    // login($conn)
+    echo "you have not finsished the code";
+}
 ?>;
