@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+    cursor: pointer;
+}
+
+.main-container {
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+/* global DRY styling  */
+.header,
+.nav,
+.main-nav div, .auth {
+    display: flex;
+    align-items: center;
+}
+
+.header,
+.main,
+.footer,
+.left-side {
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.7rem;
+}
+.f-logo {
+    display: block;
+    text-align: center;
+}
+
+/* header styling  */
+.header {
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+.auth{
+    gap: 10px;
+}
+.a-btn{
+    border-radius: 15px;
+    padding: 5px 20px;
+    border: 2px solid #1F9AF0;
+    font-weight: 600;
+}
+.login{
+    background-color: #1F9AF0;
+    color: white;
+}
+.signup{
+    color: #1F9AF0;
+    background-color: unset;
+}
+
+/* footer styling  */
+.footer{
+    padding: 20px;
+}
+/* footer {
+    position: absolute;
+    bottom: 0;
+}
+.footer h3 {
+    text-align: center;
+}
+
+.nav {
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer div p {
+    text-align: center;
+    padding: 5px 0;
+}
+
+footer a {
+    text-decoration: none;
+} */
