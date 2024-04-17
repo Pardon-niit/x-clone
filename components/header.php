@@ -4,6 +4,6 @@
     </div>
     <div class="auth">
         <a href="/x-clone/auth/login.php"><button class="a-btn login">Login</button></a>
-        <a href=""><button class="a-btn signup">Sign Up</button></a>
+        <a href="/x-clone/auth/signup.php"><button class="a-btn signup">Sign Up</button></a>
     </div>
 </header>

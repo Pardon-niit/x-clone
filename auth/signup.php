@@ -15,7 +15,7 @@
             <i class="fa-brands fa-x-twitter auth-logo"></i>
         </section>
         <section class="form-container">
-            <form action="" class="auth-form">
+            <form action="./handleauth.php" class="auth-form" method="POST">
                 <h2>Happening now</h2>
                 <h3>Join today.</h3>
                 <fieldset>
