@@ -22,28 +22,54 @@ $userTable = "CREATE TABLE IF NOT EXISTS users(
         );";
 $res = mysqli_query($conn, $userTable);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    function signup($conn){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    function signup($conn)
+    {
         $email = $_POST['email'];
         $username = $_POST["username"];
-        $password = $_POST["password"];
+        $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
 
 
         $user_data = "INSERT INTO users(email, username, password) VALUES(?, ?, ?)";
         $sqli = mysqli_prepare($conn, $user_data);
         mysqli_stmt_bind_param($sqli, "sss", $email, $username, $password);
 
-        if (mysqli_stmt_execute($sqli)){
+        if (mysqli_stmt_execute($sqli)) {
             echo "<div><h2>Account created Successfully!</h2></div>";
             header("refresh:2; url=/x-clone/auth/login.php");
         }
     }
+    function login($conn)
+    {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        if (filter_var($_POST['username'], FILTER_VALIDATE_EMAIL)) {
+            $user_data = "SELECT * FROM users WHERE email = ?";
+        } else {
+            $user_data = "SELECT * FROM users WHERE username = ?";
+        }
+
+        $stmt = mysqli_prepare($conn, $user_data);
+        mysqli_stmt_bind_param($stmt, "s", $username);
+
+        if(mysqli_stmt_execute($stmt)){
+            $result = mysqli_stmt_get_result($stmt);
+            $row = mysqli_fetch_assoc($result);
+            
+            if($row){
+                if (password_verify($password, $row['password'])){
+                    echo "<div><h2>Login Successful</h2></div>";
+                    header("refresh:2; url=/x-clone");
+                }
+            }
+        }
+    }
 }
-if (isset($_POST['signup'])){
+if (isset($_POST['signup'])) {
     signup($conn);
 }
-if (isset($_POST['login'])){
-    // login($conn)
-    echo "you have not finsished the code";
+if (isset($_POST['login'])) {
+    login($conn);
 }
 ?>;
