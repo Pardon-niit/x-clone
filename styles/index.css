@@ -59,6 +59,11 @@ button{
     background-color: #1F9AF0;
     color: white;
 }
+.logout{
+    background-color: #d94848;
+    color: white;
+    border-color: #d94848;
+}
 .signup{
     color: #1F9AF0;
     background-color: unset;

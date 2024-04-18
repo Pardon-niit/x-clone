@@ -69,13 +69,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             if($row){
                 if (password_verify($password, $row['password'])){
+                    session_start();
+
+                    $_SESSION['username'] = $row['username'];
+                    $_SESSION['userid'] = $row['id'];
+
                         echo '<div style="height: 90vh;display: flex;justify-content: center;align-items: center;">
                         <div style="width: 600px;height: 200px;display: flex;box-shadow: 4px 4px 8px 3px rgb(167 199 171 / 30%);justify-content: center;align-items: center;">
                             <p style="color: green;font-size: 40px;">Login Successful</p>
                         </div>
                     </div>';
-                    $_SESSION['username'] = $row['username'];
-                    $_SESSION['userid'] = $row['id'];
                     header("refresh:2; url=/x-clone");
                 } else {
                     $err["upi"] = "Username or password incorrect";

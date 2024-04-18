@@ -14,41 +14,12 @@
 <body>
     <div class="main-container">
         <?php
+        session_start();
         include "./components/header.php";
         ?>
         <main class="main">
             <aside class="left-side">
-                <nav class="main-nav">
-                    <div>
-                        <i class="bi bi-house"></i>
-                        <p>Home</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <p>Search</p>
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-bell"></i>
-                        <p>Notifications</p>
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-envelope"></i>
-                        <p>Messages</p>
-                    </div>
-                    <div>
-                        <i class="fa-brands fa-x-twitter"></i>
-                        <p>Premium</p>
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-user"></i>
-                        <p>Profile</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-ellipsis"></i>
-                        <p>More</p>
-                    </div>
-                    <button class="new-post-btn">Post</button>
-                </nav>
+                <?php include "./components/sidenav.php"?>
             </aside>
             <div class="content-container">
                 <section class="posts">
