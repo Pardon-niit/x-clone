@@ -35,7 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_stmt_bind_param($sqli, "sss", $email, $username, $password);
 
         if (mysqli_stmt_execute($sqli)) {
-            echo "<div><h2>Account created Successfully!</h2></div>";
+            echo '<div style="height: 90vh;display: flex;justify-content: center;align-items: center;">
+                    <div style="width: 400px;height: 200px;display: flex;box-shadow: 4px 4px 8px 3px rgb(167 199 171 / 30%);justify-content: center;align-items: center;">
+                        <p style="color: green;font-size: 40px;">Account Created Succesfully.</p>
+                    </div>
+                </div>';
             header("refresh:2; url=/x-clone/auth/login.php");
         }
     }
@@ -59,7 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             if($row){
                 if (password_verify($password, $row['password'])){
-                    echo "<div><h2>Login Successful</h2></div>";
+                    echo '<div style="height: 90vh;display: flex;justify-content: center;align-items: center;">
+                    <div style="width: 400px;height: 200px;display: flex;box-shadow: 4px 4px 8px 3px rgb(167 199 171 / 30%);justify-content: center;align-items: center;">
+                        <p style="color: green;font-size: 40px;">Login Successful</p>
+                    </div>
+                </div>';
                     header("refresh:2; url=/x-clone");
                 }
             }
