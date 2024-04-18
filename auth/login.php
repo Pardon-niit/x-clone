@@ -18,6 +18,7 @@
             <form action="./handleauth.php" method="POST" class="auth-form">
                 <h2>Happening now</h2>
                 <h3>Welcome back!</h3>
+                <span class="err404">User not found.</span>
                 <fieldset>
                     <input type="text" name="username" placeholder="Email/Username">
                 </fieldset>

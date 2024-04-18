@@ -25,6 +25,8 @@ $res = mysqli_query($conn, $userTable);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     function signup($conn)
     {
+        $err = []; // error handling
+
         $email = $_POST['email'];
         $username = $_POST["username"];
         $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
@@ -47,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     function login($conn)
     {
+        $err = []; // error handling
+
         $username = $_POST['username'];
         $password = $_POST['password'];
 
@@ -71,12 +75,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>';
                     header("refresh:2; url=/x-clone");
-                }
-            } else {
+                } else {
                 echo "Username or password incorrect";
             }
+            } else {
+            $err["nf"] = "User do not exist";
+            header("Location: /x-clone/auth/login.php?error=" . urlencode(serialize($err)));
+        }
         } else {
-            echo "User do not exist";
+            echo "An error occured";
         }
     }
 }
