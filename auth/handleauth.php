@@ -77,11 +77,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     header("refresh:2; url=/x-clone");
                 } else {
                 echo "Username or password incorrect";
-            }
+                }
             } else {
-            $err["nf"] = "User do not exist";
-            header("Location: /x-clone/auth/login.php?error=" . urlencode(serialize($err)));
-        }
+                 $err["nf"] = "User do not exist";
+                 header("Location: /x-clone/auth/login.php?error=" . urlencode(serialize($err)));
+             }
         } else {
             echo "An error occured";
         }
