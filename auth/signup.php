@@ -32,7 +32,7 @@
                     <label for="terms">By signing up, you agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>, including <a href="">Cookie</a> Use. </label>
                 </div>
                 <fieldset class="s-btn">
-                    <input type="submit" value="Login" name="signup">
+                    <input type="submit" value="Create Account" name="signup">
                 </fieldset>
                 <p>Already have an account? <a href="/x-clone/auth/login.php">Login</a></p>
             </form>

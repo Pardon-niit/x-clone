@@ -36,11 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (mysqli_stmt_execute($sqli)) {
             echo '<div style="height: 90vh;display: flex;justify-content: center;align-items: center;">
-                    <div style="width: 400px;height: 200px;display: flex;box-shadow: 4px 4px 8px 3px rgb(167 199 171 / 30%);justify-content: center;align-items: center;">
+                    <div style="width: 600px;height: 200px;display: flex;box-shadow: 4px 4px 8px 3px rgb(167 199 171 / 30%);justify-content: center;align-items: center;">
                         <p style="color: green;font-size: 40px;">Account Created Succesfully.</p>
                     </div>
                 </div>';
             header("refresh:2; url=/x-clone/auth/login.php");
+        } else {
+            echo "An error occured";
         }
     }
     function login($conn)
@@ -64,13 +66,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if($row){
                 if (password_verify($password, $row['password'])){
                     echo '<div style="height: 90vh;display: flex;justify-content: center;align-items: center;">
-                    <div style="width: 400px;height: 200px;display: flex;box-shadow: 4px 4px 8px 3px rgb(167 199 171 / 30%);justify-content: center;align-items: center;">
+                    <div style="width: 600px;height: 200px;display: flex;box-shadow: 4px 4px 8px 3px rgb(167 199 171 / 30%);justify-content: center;align-items: center;">
                         <p style="color: green;font-size: 40px;">Login Successful</p>
                     </div>
                 </div>';
                     header("refresh:2; url=/x-clone");
                 }
+            } else {
+                echo "Username or password incorrect";
             }
+        } else {
+            echo "User do not exist";
         }
     }
 }
