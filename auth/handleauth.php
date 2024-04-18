@@ -69,17 +69,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             if($row){
                 if (password_verify($password, $row['password'])){
-                    echo '<div style="height: 90vh;display: flex;justify-content: center;align-items: center;">
-                    <div style="width: 600px;height: 200px;display: flex;box-shadow: 4px 4px 8px 3px rgb(167 199 171 / 30%);justify-content: center;align-items: center;">
-                        <p style="color: green;font-size: 40px;">Login Successful</p>
-                    </div>
-                </div>';
+                        echo '<div style="height: 90vh;display: flex;justify-content: center;align-items: center;">
+                        <div style="width: 600px;height: 200px;display: flex;box-shadow: 4px 4px 8px 3px rgb(167 199 171 / 30%);justify-content: center;align-items: center;">
+                            <p style="color: green;font-size: 40px;">Login Successful</p>
+                        </div>
+                    </div>';
+                    $_SESSION['username'] = $row['username'];
+                    $_SESSION['userid'] = $row['id'];
                     header("refresh:2; url=/x-clone");
                 } else {
-                echo "Username or password incorrect";
+                    $err["upi"] = "Username or password incorrect";
+                    header("Location: /x-clone/auth/login.php?error=" . urlencode(serialize($err)));
                 }
             } else {
-                 $err["nf"] = "User do not exist";
+                 $err["nf"] = "User not found";
                  header("Location: /x-clone/auth/login.php?error=" . urlencode(serialize($err)));
              }
         } else {

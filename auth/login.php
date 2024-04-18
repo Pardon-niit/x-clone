@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <?php
+        if (!empty($_GET['error'])){
+            $err =  unserialize($_GET['error']);
+        }
+    ?>
     <main class="main">
         <section class="logo-container">
             <i class="fa-brands fa-x-twitter auth-logo"></i>
@@ -18,7 +23,7 @@
             <form action="./handleauth.php" method="POST" class="auth-form">
                 <h2>Happening now</h2>
                 <h3>Welcome back!</h3>
-                <span class="err404">User not found.</span>
+                <span class='err404'><?php echo (isset($err["nf"]) ? $err["nf"] : (isset($err['upi']) ? $err['upi'] : ""));?></span>
                 <fieldset>
                     <input type="text" name="username" placeholder="Email/Username">
                 </fieldset>
