@@ -25,7 +25,7 @@
                     <input type="text" name="username" placeholder="Username">
                 </fieldset>
                 <fieldset>
-                    <input type="text" name="email" placeholder="Email">
+                    <input type="email" name="email" placeholder="Email">
                 </fieldset>
                 <fieldset>
                     <input type="password" name="password" id="password" placeholder="Password">
