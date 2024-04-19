@@ -1,13 +1,6 @@
 <?php
-$username = "root";
-$password = "";
-$db = "xclone";
+include "./utils/dbconfig.php";
 
-$conn = mysqli_connect("localhost", $username, $password, $db);
-
-if (!$conn) {
-    die("Connection Failed " . mysqli_connect_errno());
-}
 //  User Table createion 
 $userTable = "CREATE TABLE IF NOT EXISTS users(
         id INT AUTO_INCREMENT PRIMARY KEY,
