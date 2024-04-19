@@ -19,6 +19,9 @@
                 <h2>Happening now</h2>
                 <h3>Join today.</h3>
                 <fieldset>
+                    <input type="text" name="name" placeholder="Name">
+                </fieldset>
+                <fieldset>
                     <input type="text" name="username" placeholder="Username">
                 </fieldset>
                 <fieldset>

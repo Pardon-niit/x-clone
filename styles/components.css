@@ -8,6 +8,14 @@
     width: 100%;
     /* background-color: red; */
     margin-top: 10px;
+    height: 92.8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.main-nav a {
+    text-decoration: none;
+    color: unset;
 }
 .main-nav div {
     padding: 15px 30px 15px 15px;
@@ -36,6 +44,33 @@
 }
 .new-post-btn:hover {
     background-color: rgb(26, 140, 216);
+}
+.profile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.avi-name{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.profile-nav h3{
+    font-size: 1rem;
+}
+.profile-nav p{
+    font-size: 0.7rem;
+}
+
+.profile-nav figure {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.profile-nav figure img {
+    width: 100%;
+    height: 100%;
 }
 
 /* content container  */
@@ -93,9 +128,9 @@
     text-decoration: underline;
 }
 
-.content {
-    /* text-align: justify; */
-}
+/* .content {
+    text-align: justify;
+} */
 
 .reaction {
     display: flex;
@@ -119,22 +154,22 @@
     border-radius: 25px;
     margin: 15px 0;
 }
-.search{
-  margin-top: 0px;
+.search {
+    margin-top: 0px;
 }
-.search fieldset{
-  border: none;
-  background-color: unset;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.search fieldset {
+    border: none;
+    background-color: unset;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-.search fieldset input{
-  outline-color: transparent;
-  border: none;
-  background-color: unset;
-  width: 100%;
-  font-size: 1rem;
+.search fieldset input {
+    outline-color: transparent;
+    border: none;
+    background-color: unset;
+    width: 100%;
+    font-size: 1rem;
 }
 
 .subscribe p {
@@ -150,8 +185,8 @@
     padding: 10px 20px;
 }
 
-.trends{
-  padding: 10px 0;
+.trends {
+    padding: 10px 0;
 }
 .trm {
     /* margin: 5px 0 10px 0; */
@@ -162,8 +197,8 @@
     justify-content: space-between;
     cursor: pointer;
 }
-.tr:hover{
-  background-color: rgba(0, 0, 0, 0.11);
+.tr:hover {
+    background-color: rgba(0, 0, 0, 0.11);
 }
 .tr h3 {
     font-size: 1rem;
@@ -175,4 +210,178 @@
 .tr p,
 .tr-more {
     color: #536471;
+}
+
+/* user profile  */
+.profile {
+    width: 100%;
+}
+.user-nav-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.banner {
+    width: 100%;
+    height: 180px;
+    background-color: #f4f4f4;
+}
+
+.user-nav-info-container {
+    position: relative;
+    padding: 0 15px;
+}
+.user-nav-info {
+    position: relative;
+}
+
+.fa-arrow-left{
+    font-size: 2.3rem;
+}
+.avi {
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border: 3px solid #fff;
+    position: absolute;
+    top: -75px;
+    background-color: #ffffff22;
+}
+.avi img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.user-bio {
+    padding-top: 90px;
+}
+.username {
+    color: grey;
+}
+.bio {
+    margin: 10px 0;
+}
+.followers {
+    display: flex;
+    gap: 20px;
+    font-size: 1rem;
+}
+.followers span {
+    font-size: 1.05rem;
+}
+.user-edit-info {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.user-edit-info button {
+    padding: 8px 15px;
+    border: 1.5px solid rgba(0, 0, 0, 0.12);
+    background-color: unset;
+    border-radius: 20px;
+}
+
+/* user profile content  */
+.user-content {
+    margin-top: 30px;
+}
+.user-content nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.12);
+}
+.user-content nav div {
+    width: 100%;
+    text-align: center;
+}
+.user-content nav div a {
+    text-decoration: none;
+    color: unset;
+}
+.user-content nav div p {
+    padding: 10px 0 20px 0;
+}
+
+/* Edit profile */
+.edit-dp {
+    position: relative;
+}
+.edit-info {
+    padding-top: 90px;
+}
+.edit-info fieldset {
+    border-radius: 5px;
+    margin: 30px 0;
+}
+.edit-info div {
+    border-radius: 5px;
+    margin: 30px 0;
+}
+.edit-info div label {
+    display: block;
+    padding: 5px 0;
+}
+.edit-info div input {
+    padding: 5px;
+    width: 200px;
+}
+
+.edit-info fieldset label {
+    display: block;
+    padding: 5px;
+}
+.edit-info fieldset input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+.edit-info fieldset textarea {
+    width: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+.edit-banner {
+    position: relative;
+}
+
+.fac {
+    position: absolute;
+    font-size: 2.3rem;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+}
+.hide-input {
+    visibility: collapse;
+}
+.edit-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.edit-header div{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.edit-header button{
+    color: #fff;
+    background-color: #000;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 1px solid #000;
+    padding: 5px 15px;
+    border-radius: 25px;
+}
+.fa-xmark{
+    font-size: 2.3rem;
 }
