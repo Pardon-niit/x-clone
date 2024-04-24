@@ -1,5 +1,5 @@
 <?php
-include "./utils/dbconfig.php";
+include "../utils/dbconfig.php";
 
 //  User Table createion 
 $userTable = "CREATE TABLE IF NOT EXISTS users(
@@ -95,6 +95,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['userid'] = $row['id'];
+                
+                    $qur = "SELECT * FROM user_info "
+                    . "JOIN users ON user_info.user_id = users.id "
+                    . "WHERE users.id = " . $_SESSION['userid'];
+
+                $stmt = mysqli_prepare($conn, $qur);
+                if ($stmt) {
+                    if (mysqli_stmt_execute($stmt)) {
+                        $result = mysqli_stmt_get_result($stmt);
+                        $row = mysqli_fetch_assoc($result);
+                        $_SESSION['user'] = $row;
+                        mysqli_stmt_close($stmt);
+                        mysqli_close($conn);
+                    }
+                }
+                    
 
                         echo '<div style="height: 90vh;display: flex;justify-content: center;align-items: center;">
                         <div style="width: 600px;height: 200px;display: flex;box-shadow: 4px 4px 8px 3px rgb(167 199 171 / 30%);justify-content: center;align-items: center;">

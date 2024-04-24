@@ -33,10 +33,10 @@
 <?php echo isset($_SESSION['userid']) ? "
 <div class='profile-nav'>
     <div class='avi-name'>
-        <figure><img src='/x-clone/assets/image/user-icon-placeholder-1.png' alt='user avatar'></figure>
+    <figure><img src='/x-clone/assets/image/" . $_SESSION['user']['avatar'] . "' alt='user avatar'></figure>
         <div>
-            <h3>Twitter User</h3>
-            <p>@twitteruser</p>
+            <h3>" . $_SESSION['user']['name'] . "</h3>
+            <p>@" . $_SESSION['username'] . "</p>
         </div>
     </div>
     <div>

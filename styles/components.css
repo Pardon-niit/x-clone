@@ -339,6 +339,7 @@
     border: none;
     outline: none;
     padding: 5px;
+    font-size: 1.05rem;
 }
 .edit-info fieldset textarea {
     width: 100%;
@@ -346,6 +347,7 @@
     border: none;
     outline: none;
     padding: 5px;
+    font-size: 1.05rem;
 }
 .edit-banner {
     position: relative;
