@@ -1,12 +1,12 @@
 <nav class="main-nav">
-    <div>
+    <a href="/x-clone"><div>
         <i class="bi bi-house"></i>
         <p>Home</p>
-    </div>
-    <div>
+    </div></a>
+    <a href="/x-clone?page=search"><div>
         <i class="fa-solid fa-magnifying-glass"></i>
         <p>Search</p>
-    </div>
+    </div></a>
     <?php echo isset($_SESSION['userid']) ? "
     <a href=''><div>
         <i class='fa-regular fa-bell'></i>
@@ -33,7 +33,7 @@
 <?php echo isset($_SESSION['userid']) ? "
 <div class='profile-nav'>
     <div class='avi-name'>
-    <figure><img src='/x-clone/assets/image/" . $_SESSION['user']['avatar'] . "' alt='user avatar'></figure>
+    <figure><img src='/x-clone/assets/uploads/" . $_SESSION['user']['avatar'] . "' alt='user avatar'></figure>
         <div>
             <h3>" . $_SESSION['user']['name'] . "</h3>
             <p>@" . $_SESSION['username'] . "</p>

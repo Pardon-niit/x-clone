@@ -10,6 +10,13 @@
 </head>
 
 <body>
+    <?php
+    session_start()
+;    if (isset($_SESSION["userid"])){
+    header("Location: /x-clone/");
+        
+    }
+    ?>
     <main class="main">
         <section class="logo-container">
             <i class="fa-brands fa-x-twitter auth-logo"></i>

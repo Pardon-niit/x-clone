@@ -10,6 +10,7 @@ if ($stmt) {
     if (mysqli_stmt_execute($stmt)) {
         $result = mysqli_stmt_get_result($stmt);
         $row = mysqli_fetch_assoc($result);
+        $_SESSION['user'] = $row;
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
     }
@@ -28,12 +29,12 @@ if ($stmt) {
         </div>
     </div>
     <figure class="banner">
-        <img src="" alt="user profile banner">
+         <img src="<?php echo $row['banner_img'] == 'placeholder.png' ? '/x-clone/assets/image/' . $row['banner_img'] : '/x-clone/assets/uploads/' . $row['banner_img']?>" alt="user profile banner">
     </figure>
     <div class="user-nav-info-container">
         <div class="user-nav-info">
             <figure class="avi">
-                <img src="/x-clone/assets/image/user-icon-placeholder-1.png" alt="user profile image">
+         <img src="<?php echo $row['avatar'] == 'placeholder.png' ? '/x-clone/assets/image/' . $row['avatar'] : '/x-clone/assets/uploads/' . $row['avatar']?>" alt="user profile avatar">
             </figure>
             <div class="user-bio">
                 <h2 class="profile-name"><?php echo $row['name'] ?></h2>
@@ -43,18 +44,18 @@ if ($stmt) {
                         <?php echo $row['bio'] ?>
                     </p>
                 </div>
-                <div>
+                <div class="icons">
                     <div class="profile-icon">
-                        <i></i>
-                        <span></span>
+                    <i class="bi bi-geo-alt"></i>
+                        <span>  <?php echo $row['location'] ?></span>
                     </div>
                     <div class="profile-icon">
-                        <i></i>
-                        <span></span>
+                    <i class="bi bi-globe"></i>
+                        <span>  <?php echo $row['website'] ?></span>
                     </div>
                     <div class="profile-icon">
-                        <i></i>
-                        <span></span>
+                    <i class="bi bi-calendar-week"></i>
+                        <span>  <?php echo $row['dob'] ?></span>
                     </div>
                 </div>
                 <div class="followers">

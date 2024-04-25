@@ -11,6 +11,11 @@
 
 <body>
     <?php
+    session_start()
+;    if (isset($_SESSION["userid"])){
+    header("Location: /x-clone/");
+        
+    }
         if (!empty($_GET['error'])){
             $err =  unserialize($_GET['error']);
         }
