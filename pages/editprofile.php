@@ -23,14 +23,14 @@ if ($stmt) {
     </div>
     <form action="pages/handleEdit.php" method="POST" id="editprofile" enctype="multipart/form-data">
         <figure class="banner edit-banner">
-            <img src="<?php echo $row['banner_img']?>" alt="user profile banner">
+            <img src="<?php echo $row['banner_img'] == 'placeholder.png' ? '/x-clone/assets/image/' . $row['banner_img'] : '/x-clone/assets/uploads/' . $row['banner_img']?>" alt="user profile banner">
             <label for="banner" class="fac"><i class="fa-solid fa-camera"></i></label>
             <input type="file" name="banner" id="banner" class="hide-input">
         </figure>
         <div style="padding: 0 20px;">
             <div class="edit-dp edit-banner">
                 <figure class="avi">
-                    <img src=<?php echo  "/x-clone/assets/image/$row[avatar]"?> alt="user profile image">
+         <img src="<?php echo $row['avatar'] == 'placeholder.png' ? '/x-clone/assets/image/' . $row['avatar'] : '/x-clone/assets/uploads/' . $row['avatar']?>" alt="user profile avatar">
                     <label for="avi" class="fac"><i class="fa-solid fa-camera"></i></label>
                     <input type="file" name="avatar" id="avi" class="hide-input">
                 </figure>
