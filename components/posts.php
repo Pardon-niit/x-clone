@@ -17,7 +17,8 @@
         include "./utils/dbconfig.php";
         include "./utils/moment.php";
 
-        if (isset($_POST["submit"])) {
+        $tableExists = mysqli_query($conn, "SHOW TABLES LIKE 'posts'");
+        if (!$tableExists->lengths) {
             $postTable = "CREATE TABLE IF NOT EXISTS posts(
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 content VARCHAR(255),
@@ -27,9 +28,12 @@
                 FOREIGN KEY (user_id) REFERENCES users(id)
                 );";
             $res = mysqli_query($conn, $postTable);
+        }
+
+        if (isset($_POST["submit"])) {;
             
-                //get form data
-                $content = $_POST['content'];
+            //get form data
+            $content = $_POST['content'];
 
             $post_data = "INSERT INTO posts(content, user_id) VALUES(?, ?);";
             $stmt = mysqli_prepare($conn, $post_data);
@@ -40,12 +44,9 @@
 
             }
         }
-        
         ?>
-        
-        
-
     </section>
+
     <?php
     $qur2 = "SELECT 
     posts.content, 
